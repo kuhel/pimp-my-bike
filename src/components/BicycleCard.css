@@ -1,0 +1,54 @@
+.BicyclesList {
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+    padding-top: 20px!important;
+    padding-bottom: 20px!important;
+}
+
+.BicycleCard {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 4px 4px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.BicycleCard__Photo {
+    display: flex;
+    justify-content: center;
+}
+
+.BicycleCard__Photo img {
+    max-width: 100%;
+}
+
+.BicycleCard__Name {
+    color: rgba(0, 0, 0, 0.625);
+}
+
+.BicycleCard__Footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.BicycleCard__Footer .Price {
+    flex-basis: 40%;
+}
+
+.BicycleCard__Footer .BuyBtn {
+    flex-basis: 60%;
+}
+
+.Price__Value {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.BuyBtn--InBasket .Button {
+    background-color: var(--accent);
+    color: var(--white);
+}

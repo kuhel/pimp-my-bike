@@ -1,0 +1,28 @@
+.PopoutWrapper__container {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    background-color: rgba(40, 43, 46, 0.2);
+}
+
+.PopoutWrapper {
+    height: 100vh;
+}
+
+.Button--disabled {
+    opacity: .5;
+    pointer-events: none;
+}
+
+#root {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.old_ios #root {
+    -webkit-overflow-scrolling: auto;
+}
+
+.Icon--28,
+.Icon--28 svg {
+    width: 28px!important;
+    height: 28px!important;
+}

@@ -1,0 +1,38 @@
+.Group.FiltersGroup {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.Group.FiltersGroup::after {
+    content: none;
+}
+
+.FiltersList {
+    display: flex;
+    padding-top: 0!important;
+}
+
+.FiltersList--Price p {
+    margin: 0;
+}
+
+.FiltersList__Item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 4px;
+    margin-right: 4px;
+    border-radius: 4px;
+    border: 1px solid var(--field_border);
+    font-size: 15px;
+}
+
+.FiltersList__Item span {
+    margin-right: 4px;
+}
+
+.FiltersList__Item svg,
+.FiltersList__Item .Icon {
+    width: 12px!important;
+    height: 12px !important;
+}
