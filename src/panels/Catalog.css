@@ -29,6 +29,7 @@
 
 .FiltersList__Item span {
     margin-right: 4px;
+    color: var(--attach_picker_tab_inactive_text);
 }
 
 .FiltersList__Item svg,

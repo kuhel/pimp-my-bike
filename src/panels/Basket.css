@@ -21,7 +21,7 @@
 
 .BasketSum__ItemSum {
   font-weight: bold;
-  color: var(--text_link_hightlighted_background);
+  color: var(--button_muted_background);
 }
 
 .BasketSum .Cell__main {
