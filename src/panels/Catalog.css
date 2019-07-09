@@ -7,9 +7,9 @@
     content: none;
 }
 
-.FiltersList {
+.Div.FiltersList {
     display: flex;
-    padding-top: 0!important;
+    padding-top: 0;
 }
 
 .FiltersList--Price p {

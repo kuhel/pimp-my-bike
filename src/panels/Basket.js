@@ -27,7 +27,7 @@ const Basket = ({ id, popout, items, fetchedUser, personalCard, showAddressBtn, 
 						size='l'
 						description={personalCard ? personalCard.address['specified_address'] : 'Адрес не указан'}
 						asideContent={personalCard ? personalCard.email : 'Почта не указана'}
-						bottomContent={showAddressBtn && <Button onClick={getPersonalAddress} level='tertiary'>{personalCard && personalCard.address ? 'Добавить адрес' : 'Изменить адрес'}</Button>}
+						bottomContent={showAddressBtn && <Button onClick={getPersonalAddress} level='tertiary'>{personalCard && personalCard.address ? 'Изменить адрес' : 'Добавить адрес'}</Button>}
 						before={<Avatar src={fetchedUser['photo_100']} />}
 					>
 						{fetchedUser['first_name']} {fetchedUser['last_name']}

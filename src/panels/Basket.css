@@ -1,4 +1,4 @@
-.BasketBike .Avatar__img {
+.BasketBike .Avatar__img{
   width:70px!important;
   height: 50px!important;
   border-radius: 0!important;
@@ -31,6 +31,7 @@
 .UserInfo .Button {
   padding-top: 0;
   padding-left: 0;
+  border-radius: 0;
 }
 .UserInfo .Button__content {
   padding-top: 0;
