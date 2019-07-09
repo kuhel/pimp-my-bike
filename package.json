@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env PORT=10888 react-scripts start",
     "build": "react-scripts build",
-    "surge-deploy": "npm run build && surge ./build"
+    "surge-deploy": "npm run build && surge ./build --domain painful-cake.surge.sh"
   },
   "keywords": [],
   "author": "",
@@ -31,7 +31,6 @@
   "browserslist": [
     ">0.2%",
     "not dead",
-    "not ie <= 11",
-    "not op_mini alsurge"
+    "not ie <= 11"
   ]
 }

@@ -27,3 +27,11 @@
 .BasketSum .Cell__main {
   padding-right: 0;
 }
+
+.UserInfo .Button {
+  padding-top: 0;
+  padding-left: 0;
+}
+.UserInfo .Button__content {
+  padding-top: 0;
+}

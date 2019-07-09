@@ -4,7 +4,6 @@ import CatalogContainer from './containers/CatalogContainer';
 import BasketContainer from './containers/BasketContainer';
 import Icon28Favorite from '@vkontakte/icons/dist/28/favorite';
 import Icon56MarketOutline from '@vkontakte/icons/dist/56/market_outline';
-// import connect from '@vkontakte/vkui-connect-promise';
 import '@vkontakte/vkui/dist/vkui.css';
 
 class MainView extends React.Component {
@@ -46,36 +45,33 @@ class MainView extends React.Component {
 	}
 
 	render () {
-		const { token } = this.props;
+		const { fetchedUser, token, personalCard, getPersonalAddress } = this.props;
 		const { activeStory, basket } = this.state;
-		if (true) {
-			return <Epic activeStory={activeStory} tabbar={
-				<Tabbar>
-					<TabbarItem
-						onClick={this.onStoryChange}
-						selected={activeStory === 'catalog'}
-						data-story='catalog'
-						text='Каталог'
-					>
-						<Icon28Favorite />
-					</TabbarItem>
-					<TabbarItem
-						onClick={this.onStoryChange}
-						selected={activeStory === 'basket'}
-						data-story='basket'
-						text='Корзина'
-						label={Object.keys(basket).length ? Object.keys(basket).length : null}
-					>
-						<Icon56MarketOutline className='Icon--28' />
-					</TabbarItem>
-				</Tabbar>
-			}>
-				<BasketContainer id='basket' addToBasket={this.addToBasket} basket={basket}  token={token} />
-				<CatalogContainer id='catalog' addToBasket={this.addToBasket} isInBasket={this.isInBasket} />
-				}
-			</Epic>
-		}
-		return null
+		return <Epic activeStory={activeStory} tabbar={
+			<Tabbar>
+				<TabbarItem
+					onClick={this.onStoryChange}
+					selected={activeStory === 'catalog'}
+					data-story='catalog'
+					text='Каталог'
+				>
+					<Icon28Favorite />
+				</TabbarItem>
+				<TabbarItem
+					onClick={this.onStoryChange}
+					selected={activeStory === 'basket'}
+					data-story='basket'
+					text='Корзина'
+					label={Object.keys(basket).length ? Object.keys(basket).length : null}
+				>
+					<Icon56MarketOutline className='Icon--28' />
+				</TabbarItem>
+			</Tabbar>
+		}>
+			<BasketContainer id='basket' addToBasket={this.addToBasket} basket={basket} fetchedUser={fetchedUser} personalCard={personalCard} getPersonalAddress={getPersonalAddress} token={token} />
+			<CatalogContainer id='catalog' addToBasket={this.addToBasket} isInBasket={this.isInBasket} />
+			}
+		</Epic>
 	}
 }
 

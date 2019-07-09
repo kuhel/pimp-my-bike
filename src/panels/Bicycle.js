@@ -37,10 +37,9 @@ export default class Bicycle extends React.Component {
                 {gallery ?
                     <Gallery
                         slideWidth='100%'
-                        style={{ height: 250 }}
                         bullets="dark"
                     >
-                        {gallery.map((item) => <img src={item} alt={name}/>)}
+                        {gallery.map((item, i) => <img key={`BikeGalleryItem${i}`} src={item} alt={name}/>)}
                     </Gallery>
                     :
                     <Div>

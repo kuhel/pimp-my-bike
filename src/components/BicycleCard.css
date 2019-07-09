@@ -19,10 +19,6 @@
     justify-content: center;
 }
 
-.BicycleCard__Photo img {
-    max-width: 100%;
-}
-
 .BicycleCard__Name {
     color: rgba(0, 0, 0, 0.625);
 }

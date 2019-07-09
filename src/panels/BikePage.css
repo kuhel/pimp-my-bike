@@ -12,3 +12,6 @@
   color: var(--white);
 }
 
+.Gallery {
+  height: auto!important;
+}

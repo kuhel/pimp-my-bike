@@ -3,6 +3,7 @@ import connect from '@vkontakte/vkui-connect-promise';
 import { Spinner } from '@vkontakte/vkui';
 import { APP_ID } from './config'
 import MainScreen from './MainScreen';
+import { isWeb, isDev } from './utils/env';
 import '@vkontakte/vkui/dist/vkui.css';
 import './main.css';
 
@@ -13,6 +14,7 @@ class App extends React.Component {
 		this.state = {
 			activePanel: 'home',
 			fetchedUser: null,
+			personalCard: null,
 			token: '',
 		};
 	}
@@ -20,9 +22,12 @@ class App extends React.Component {
 	componentDidMount() {
 		connect.send('VKWebAppGetUserInfo', {})
 			.then((e) => {
-				this.setState({ fetchedUser: e.data });
+				setTimeout(() => {
+					console.log(e.data);
+					this.setState({ fetchedUser: e.data });
+				}, 1000);
 			})
-			.catch(() => this.setState({ fetchedUserError: true }));
+			.catch(() => this.setState({ fetchedUser: null }));
 		connect.send('VKWebAppGetAuthToken', { 'app_id': APP_ID, 'scope': '' })
 			.then((e) => {
 				this.setState({ token: e.data.access_token });
@@ -30,10 +35,21 @@ class App extends React.Component {
 			.catch(() => this.setState({ tokenError: true }));
 	}
 
+	getPersonalAddress = () => {
+		if (!isWeb) {
+			connect.send('VKWebAppGetPersonalCard', {type: ['phone', 'email', 'address']})
+				.then((e) => {
+					console.log(e.data);
+					this.setState({ personalCard: e.data })
+				})
+				.catch(() => this.setState({ personalCard: null }));
+		}
+	}
+
 	render() {
-		const { fetchedUser, token } = this.state;
-		if (true) {
-			return <MainScreen fetchedUser={fetchedUser} token={token} />;
+		const { fetchedUser, token, personalCard } = this.state;
+		if (isDev || fetchedUser) {
+			return <MainScreen fetchedUser={fetchedUser} personalCard={personalCard} token={token} getPersonalAddress={this.getPersonalAddress} />;
 		} else {
 			return <Spinner />;
 		}
